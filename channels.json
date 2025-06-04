@@ -389,8 +389,8 @@
     "category": "غير ذلك",
     "logo": "http://mobi.jawaltv.com/iphone/images/ar_jpg/omantv.jpg",
     "stream_url": "https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8"
-  }
-]￼Enter  {
+  },
+  {
     "name": "Al Jazeera Mubasher",
     "category": "قنوات إخبارية",
     "logo": "http://mobi.jawaltv.com/iphone/images/ar_jpg/aljazeera_mubashirmisr.jpg",
@@ -416,7 +416,7 @@
   },
   {
     "name": "Al Masirah Mubacher",
-ategory": "قنوات دينيه",
+    "category": "قنوات دينيه",
     "logo": "http://mobi.jawaltv.com/iphone/images/ar_jpg/aljazeera_mubashirmisr.jpg",
     "stream_url": "https://live2.cdnbridge.tv/AlmasirahMubasher/Mubasher_All/playlist.m3u8"
   },
