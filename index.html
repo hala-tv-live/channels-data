@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>هلا تي في</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <style>
+    :root {
+      --primary-color: #1e88e5;
+      --accent-color: #e53935;
+      --heart-off: #ffeb3b;
+      --heart-on: #e53935;
+      --light-color: #f5f5f5;
+      --dark-color: #212121;
+      --text-color: #333;
+      --text-light: #fff;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
+      --gradient-start: #e53935;
+      --gradient-end: #1e88e5;
+    }
+    
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Tajawal',sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--light-color) 0%, #e0e0e0 100%);
+      color: var(--text-color);
+      direction: rtl;
+      min-height: 100vh;
+      padding-bottom: 20px;
+    }
+    
+    #loadingOverlay {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(255,255,255,0.9);
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+      z-index:200;
+      font-size:1.2rem;
+      color: var(--primary-color);
+    }
+    
+    .spinner {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: spin 1.5s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform:rotate(0deg); }
+      to { transform:rotate(360deg); }
+    }
+    
+    .modal {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:300;
+    }
+    
+    .modal.hidden {
+      display:none;
+    }
+    
+    .modal-content {
+      background:var(--light-color);
+      padding:20px;
+      border-radius:10px;
+      text-align:center;
+      box-shadow: var(--shadow);
+      max-width:90%;
+      width: 320px;
+    }
+    
+    .modal-content h3 {
+      color: var(--accent-color);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
+    .modal-content p {
+      margin-bottom:20px;
+      font-size:1.1rem;
+      color:var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .modal-content .info-link {
+      display: block;
+      margin: 15px auto;
+      padding: 8px 15px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      width: fit-content;
+      transition: all 0.3s;
+    }
+    
+    .modal-content .info-link:hover {
+      background: #0d47a1;
+      transform: translateY(-2px);
+    }
+    
+    .modal-content button {
+      margin:10px 6px 0;
+      padding:8px 16px;
+      border:none;
+      border-radius:6px;
+      font-size:1.1rem;
+      cursor:pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+    
+    .btn-primary {
+      background:#1e90ff;
+      color:var(--text-light);
+    }
+    
+    .btn-primary:hover {
+      background: #0d47a1;
+      transform: translateY(-2px);
+    }
+    
+    .btn-warning {
+      background: #ff9800;
+      color:var(--text-light);
+    }
+    
+    .btn-warning:hover {
+      background: #ef6c00;
+      transform: translateY(-2px);
+    }
+    
+    header {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:70px;
+      background:var( --accent-color);
+      color:var(--text-light);
+      display:flex;
+      align-items:center;
+      padding:0 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index:90;
+    }
+    
+    header h1 {
+      flex-grow:1;
+      text-align:center;
+      font-size:1.6rem;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    #menuToggle, #searchBtn {
+      background:none;
+      border:none;
+      color:var(--text-light);
+      font-size:1.9rem;
+      cursor:pointer;
+      width: 20px;
+      height: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    
+    #menuToggle:hover, #searchBtn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    #searchInput {
+      width:0;
+      padding:0;
+      border:none;
+      border-radius:6px;
+      background:rgba(255,255,255,0.2);
+      color:var(--text-light);
+      transition:all .3s;
+      opacity:0;
+      font-size: 1rem;
+      height: 28px;
+    }
+    
+    #searchInput::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    #searchInput.active {
+     top:-10px;
+      width:20px;
+      padding:4px 20px;
+      opacity:1;
+    }
+    
+    #sidebar {
+      position:fixed;
+      top:0;
+      right:-300px;
+      width:300px;
+      height:100%;
+      background: linear-gradient(180deg, var(--dark-color) 0%, #111 100%);
+      color:var(--text-light);
+      transition:right .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow-y:auto;
+      z-index:100;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+    
+    #sidebar.open {
+      right:0;
+    }
+    
+    .sidebar-header {
+      padding:20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.2);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-container img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #FFFFFF, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    #closeSidebar {
+      background:none;
+      border:none;
+      color:var(--text-light);
+      font-size:1.8rem;
+      cursor:pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    
+    #closeSidebar:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    nav.categories a, .about-item {
+      display:flex;
+      align-items:center;
+      padding:12px 20px;
+      color:var(--text-light);
+      text-decoration:none;
+      transition:all .3s;
+      font-size: 1.1rem;
+      gap: 15px;
+    }
+    
+    
+    .about-link {
+      display:flex;
+      align-items:center;
+      padding:12px 20px;
+      color:var(--heart-off);
+      text-decoration:none;
+      transition:all .3s;
+      font-size: 1.1rem;
+      gap: 15px;
+    }
+    
+    
+    nav.categories a:hover, nav.categories a.active, 
+    .about-item:hover, .about-link:hover {
+      background:rgba(255,255,255,0.1);
+      padding-right: 25px;
+    }
+    
+    nav.categories a.active {
+      border-right:4px solid var(--accent-color);
+      background: rgba(229, 57, 53, 0.15);
+    }
+    
+    nav.categories i, .about-item i, .about-link i {
+      width: 24px;
+      text-align: center;
+    }
+    
+    .section-title {
+      padding: 20px 20px 10px;
+      font-size: 1.2rem;
+      color: #bbb;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-top: 6px;
+    }
+    
+    .about-links {
+      display: none;
+      padding: 0;
+    }
+    
+    .about-links.expanded {
+      display: block;
+    }
+    
+    main {
+      padding-top:80px;
+    }
+    
+    .channels-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+      gap:20px;
+      padding:20px;
+    }
+    
+    .channel-card {
+      position:relative;
+      background:#fff;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      transition:transform .2s,box-shadow .3s;
+      cursor:pointer;
+      border: 1px solid #eee;
+    }
+    
+    .channel-card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.2);
+    }
+    
+    .channel-img {
+      width:100%;
+      height:140px;
+      object-fit:contain;
+      padding:2px;
+      background: #f9f9f9;
+    }
+    
+    .channel-info {
+      padding:5px 10px;
+      text-align: center;
+      background: linear-gradient(to bottom, #fff, #f5f5f5);
+    }
+    
+    .channel-name {
+      font-size:1rem;
+      font-weight:bold;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .channel-category {
+      font-size:.85rem;
+      color:#Ffffff;
+      background: #1e90ff;
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    
+    .favorite-icon {
+      position:absolute;
+      top:10px;
+      left:12px;
+      font-size:1.2rem;
+      cursor:pointer;
+      background: rgba(255,255,255,0.8);
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    
+    .favorite-icon:hover {
+      transform: scale(1.15);
+    }
+    
+    .favorite-icon.off {
+      color: var(--heart-off);
+    }
+    
+    .favorite-icon.on {
+      color: var(--heart-on);
+    }
+    
+    #videoPlayer {
+      position:fixed;
+      top:0px;
+      left:0;
+      width:100vw;
+      height:100vh;
+      background:#000;
+      z-index:110;
+      display:none;
+    }
+    
+    #player {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    
+    .plyr__controls {
+      background:rgba(0,0,0,0.7);
+    }
+    
+    .plyr__control {
+      color:#fff!important;
+    }
+    
+    .plyr__control:hover {
+      color:var(---light-color)!important;
+    }
+    
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1.2rem;
+      color: #666;
+    }
+    
+    .no-results i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+    
+    .app-footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+    
+    .app-footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    .app-footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .channels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      header h1 {
+        font-size: 1.3rem;
+      }
+      
+      .channel-img {
+        height: 120px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .channels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      
+      #searchInput.active {
+        width: 160px;
+      }
+      
+      .channel-img {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loadingOverlay">
+    <div class="spinner"><i class="fas fa-spinner"></i></div>
+    <div>جارٍ تحميل القنوات...</div>
+  </div>
+  
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+  
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-container">
+  <img src="logo.png" alt="Logo">        <div class="logo-text">هلا تي في</div>
+      </div>
+      <button id="closeSidebar"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="section-title">التصنيفات</div>
+    <nav class="categories"></nav>
+    
+ 
+    <a href="#" id="aboutApp" class="about-item">
+      <i class="fas fa-info-circle"></i>
+      <span>حول التطبيق</span>
+      <i class="fas fa-chevron-down" style="margin-right: auto; font-size: 0.9rem;"></i>
+    </a>
+    <div class="about-links" id="aboutLinks">
+      <a href="#" class="about-link" data-type="website">
+        <i class="fas fa-globe"></i>
+        <span>موقع التطبيق</span>
+      </a>
+      <a href="#" class="about-link" data-type="privacy">
+        <i class="fas fa-shield-alt"></i>
+        <span>سياسة الخصوصية</span>
+      </a>
+      <a href="#" class="about-link" data-type="terms">
+        <i class="fas fa-file-alt"></i>
+        <span>سياسة الاستخدام</span>
+      </a>
+      <a href="#" class="about-link" data-type="contact">
+        <i class="fas fa-envelope"></i>
+        <span>اتصل بنا</span>
+      </a>
+      <a href="#" class="about-link" data-type="rate">
+        <i class="fas fa-star"></i>
+        <span>قيم التطبيق</span>
+      </a>
+    </div>
+  </div>
+  
+  <main>
+    <header>
+      <button id="menuToggle"><i class="fas fa-bars"></i></button>
+      <h1>هلا تي في</h1>
+      <div class="search-container">
+        <input id="searchInput" placeholder="ابحث عن قناة...">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </header>
+    
+    <div class="channels-grid" id="channelsContainer"></div>
+    
+    <div class="app-footer">
+      تطبيق هلا تي في © 2023 - 
+    </div>
+  </main>
+  
+  <div id="videoPlayer">
+    <video id="player" playsinline controls></video>
+    <button id="closePlayer" style="position:absolute;top:15px;left:15px;z-index:120;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:1.8rem;width:45px;height:45px;border-radius:50%;"><i class="fas fa-times"></i></button>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  
+  <script>
+    // دالة لعرض التنبيهات
+    function showToast(msg, type = 'info', duration = 1000) {
+      const bg = { 
+        success: 'linear-gradient(to right, #00b09b, #1e90ff)', 
+        info: 'linear-gradient(to right, #3498db, #1e88e5)',
+        warning: 'linear-gradient(to right, #000000, #000000)',
+        error: 'linear-gradient(to right, #e53935, #c62828)'
+      }[type];
+      
+      Toastify({ 
+        text: msg, 
+        duration, 
+        gravity: 'top', 
+        position: 'right',
+        style: { 
+          background: bg,
+          borderRadius: '4px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+        },
+        className: "toast-" + type
+      }).showToast();
+    }
+    
+    // عناصر واجهة المستخدم
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+    const channelsContainer = document.getElementById('channelsContainer');
+    const categoriesNav = document.querySelector('.categories');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const playerElem = document.getElementById('player');
+    const closePlayer = document.getElementById('closePlayer');
+    const aboutApp = document.getElementById('aboutApp');
+    const aboutLinks = document.getElementById('aboutLinks');
+    
+    // بيانات التطبيق
+    let channels = [];
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let currentCategory = 'all';
+    let hls;
+    
+    // تهيئة مشغل الفيديو
+    const player = new Plyr(playerElem, { 
+      controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'], 
+      settings: ['quality', 'speed'],
+      invertTime: false
+    });
+    
+    // عنوان ملف القنوات
+    const JSON_URL = 'https://raw.githubusercontent.com/hala-tv-live/channels-data/main/channels.json';
+    
+    // عند تحميل الصفحة
+    window.addEventListener('DOMContentLoaded', () => {
+      initListeners();
+      loadChannels();
+    });
+    
+    // تهيئة المستمعين للأحداث
+    function initListeners() {
+      menuToggle.onclick = () => sidebar.classList.toggle('open');
+      closeSidebar.onclick = () => sidebar.classList.remove('open');
+      
+      searchBtn.onclick = () => {
+        searchInput.classList.toggle('active');
+        if (searchInput.classList.contains('active')) {
+          searchInput.focus();
+        } else {
+          searchInput.value = '';
+          renderChannels(filterByCategory());
+        }
+      };
+      
+      searchInput.oninput = e => renderChannels(filterByTerm(e.target.value));
+      closePlayer.onclick = () => closeVideo();
+      
+      categoriesNav.onclick = e => {
+        const a = e.target.closest('a');
+        if (a) {
+          currentCategory = a.dataset.cat;
+          updateCategories();
+          renderChannels(filterByCategory());
+        }
+      };
+      
+      window.addEventListener('popstate', () => {
+        if (videoPlayer.style.display === 'block') closeVideo();
+      });
+      
+      window.addEventListener('offline', () => showToast('❌ لا يوجد اتصال إنترنت!', 'error'));
+      window.addEventListener('online', () => showToast('✅ تم استعادة الاتصال', 'success'));
+      
+      // أحداث قسم حول التطبيق
+      aboutApp.onclick = () => {
+        aboutLinks.classList.toggle('expanded');
+      };
+      
+      // أحداث روابط حول التطبيق
+      document.querySelectorAll('.about-link').forEach(link => {
+        link.onclick = (e) => {
+          e.preventDefault();
+          const type = link.dataset.type;
+          
+          // معلومات لكل نوع من الروابط
+          const info = {
+            website: {
+              title: "موقع التطبيق",
+              message: "يمكنك زيارة موقع التطبيق الرسمي لتحميل أحدث الإصدارات والحصول على آخر التحديثات.",
+              link: "https://example.com",
+              icon: "fas fa-globe"
+            },
+            privacy: {
+              title: "سياسة الخصوصية",
+              message: "تعرف على كيفية تعاملنا مع بياناتك الشخصية وحماية خصوصيتك أثناء استخدامك للتطبيق.",
+              link: "https://example.com/privacy",
+              icon: "fas fa-shield-alt"
+            },
+            terms: {
+              title: "سياسة الاستخدام",
+              message: "اقرأ الشروط والأحكام التي تحكم استخدامك للتطبيق وخدماتنا المختلفة.",
+              link: "https://example.com/terms",
+              icon: "fas fa-file-alt"
+            },
+            contact: {
+              title: "اتصل بنا",
+              message: "لديك استفسار أو ملاحظة؟ لا تتردد في التواصل مع فريق الدعم الخاص بنا.",
+              link: "https://example.com/contact",
+              icon: "fas fa-envelope"
+            },
+            rate: {
+              title: "قيم التطبيق",
+              message: "ساعدنا في تحسين التطبيق من خلال تقييمك وتقديم ملاحظاتك القيمة.",
+              link: "https://example.com/rate",
+              icon: "fas fa-star"
+            }
+          };
+          
+          // عرض النافذة المنبثقة بالمعلومات والرابط
+          showInfoModal(info[type]);
+        };
+      });
+    }
+    
+    // دالة لإظهار النافذة المنبثقة بالمعلومات والرابط
+    function showInfoModal(info) {
+      modalContent.innerHTML = `
+        <h3>${info.title}</h3>
+        <p>${info.message}</p>
+        <a href="${info.link}" target="_blank" class="info-link">
+          <i class="${info.icon}"></i> اضغط هنا للانتقال
+        </a>
+        <button id="infoClose" class="btn-primary" style="margin-top: 15px;">إغلاق</button>
+      `;
+      
+      modal.classList.remove('hidden');
+      
+      // إضافة مستمع حدث جديد لزر الإغلاق
+      document.getElementById('infoClose').onclick = hideModal;
+    }
+    
+    // دالة لإظهار النافذة المنبثقة العامة (لأخطاء التحميل)
+    function showErrorModal(message, showRetry = false) {
+      modalContent.innerHTML = `
+        <p>${message}</p>
+        <div>
+          ${showRetry ? '<button id="modalRetry" class="btn-warning">إعادة المحاولة</button>' : ''}
+          <button id="modalConfirm" class="btn-primary">موافق</button>
+        </div>
+      `;
+      
+      modal.classList.remove('hidden');
+      
+      // إضافة مستمعات الأحداث للأزرار
+      document.getElementById('modalConfirm').onclick = hideModal;
+      if (showRetry) {
+        document.getElementById('modalRetry').onclick = () => {
+          hideModal();
+          loadChannels();
+        };
+      }
+    }
+    
+    // دالة لإخفاء النافذة المنبثقة
+    function hideModal() {
+      modal.classList.add('hidden');
+    }
+    
+    // تحميل القنوات من الملف
+    async function loadChannels() {
+      loadingOverlay.style.display = 'flex';
+      
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+        
+        const res = await fetch(JSON_URL, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        
+        // التحقق من نجاح الاستجابة
+        if (!res.ok) throw new Error('فشل في جلب البيانات');
+        
+        channels = await res.json();
+        channels.forEach((c, i) => c.id = i);
+        
+        // تم تحميل القنوات بنجاح
+        updateCategories();
+        renderChannels(channels);
+        showToast('✅ تم تحميل القنوات بنجاح', 'success');
+      } catch (error) {
+        // عرض الرسالة فقط إذا لم يتم تحميل أي قنوات
+        if (channels.length === 0) {
+          showErrorModal('⚠️ تعذر تحميل القنوات! الرجاء إعادة المحاولة', true);
+        } else {
+          // إذا كانت هناك قنوات محملة مسبقاً، فقط أظهر تنبيه
+          showToast('⚠️ حدث خطأ أثناء تحديث القنوات، جارٍ استخدام البيانات المحفوظة', 'warning');
+        }
+      } finally {
+        loadingOverlay.style.display = 'none';
+      }
+    }
+    
+    // تحديث قائمة التصنيفات مع أيقونات مناسبة لكل فئة
+    function updateCategories() {
+      const cats = ['all', ...new Set(channels.map(c => c.category)), 'favorites'];
+      categoriesNav.innerHTML = cats.map(cat => {
+        let icon = 'fas fa-tv';
+        let label = cat;
+        
+        if (cat === 'all') {
+          icon = 'fas fa-home';
+          label = 'الرئيسية';
+        } else if (cat === 'favorites') {
+          icon = 'fas fa-star';
+          label = 'المفضلة';
+        } else {
+          // تخصيص أيقونات للفئات الشائعة
+          switch (cat.toLowerCase()) {
+            case 'رياضية':
+            case 'رياضة':
+              icon = 'fas fa-futbol';
+              break;
+            case 'أخبار':
+              icon = 'fas fa-newspaper';
+              break;
+            case 'ترفيه':
+              icon = 'fas fa-film';
+              break;
+            case 'أطفال':
+              icon = 'fas fa-child';
+              break;
+            case 'وثائقية':
+              icon = 'fas fa-globe';
+              break;
+            case 'دينية':
+              icon = 'fas fa-mosque';
+              break;
+            case 'تعليمية':
+              icon = 'fas fa-graduation-cap';
+              break;
+            case 'موسيقى':
+              icon = 'fas fa-music';
+              break;
+            case 'سياسة':
+              icon = 'fas fa-landmark';
+              break;
+            case 'اقتصاد':
+              icon = 'fas fa-chart-line';
+              break;
+            case 'أفلام':
+              icon = 'fas fa-video';
+              break;
+            case 'مسلسلات':
+              icon = 'fas fa-tv';
+              break;
+            case 'برامج':
+              icon = 'fas fa-microphone-alt';
+              break;
+          }
+        }
+        
+        return `
+          <a href='#' data-cat='${cat}' class='${cat === currentCategory ? 'active' : ''}'>
+            <i class='${icon}'></i>
+            <span>${label}</span>
+          </a>
+        `;
+      }).join('');
+    }
+    
+    // عرض القنوات
+    function renderChannels(list) {
+      channelsContainer.innerHTML = '';
+      
+      if (!list.length) {
+        channelsContainer.innerHTML = `
+          <div class="no-results">
+            <i class="fas fa-tv"></i>
+            <div>لا توجد قنوات لعرضها</div>
+          </div>
+        `;
+        return;
+      }
+      
+      list.forEach(ch => {
+        if ((currentCategory === 'favorites' && !favorites.includes(ch.id)) || 
+            (currentCategory !== 'all' && currentCategory !== 'favorites' && ch.category !== currentCategory)) {
+          return;
+        }
+        
+        const isFav = favorites.includes(ch.id);
+        const card = document.createElement('div');
+        card.className = 'channel-card';
+        
+        card.innerHTML = `
+          <i class='fas fa-heart favorite-icon ${isFav ? 'on' : 'off'}' data-id='${ch.id}'></i>
+          <img class='channel-img' src='${ch.logo}' alt='${ch.name}' onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20200%20200%22%3E%3Crect%20fill%3D%22%23f5f5f5%22%20width%3D%22200%22%20height%3D%22200%22%2F%3E%3Ctext%20fill%3D%22%23666%22%20font-family%3D%22Arial%22%20font-size%3D%2218%22%20x%3D%22100%22%20y%3D%22100%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E${ch.name}%3C%2Ftext%3E%3C%2Fsvg%3E'">
+          <div class='channel-info'>
+            <div class='channel-name'>${ch.name}</div>
+            <div class='channel-category'>${ch.category}</div>
+          </div>
+        `;
+        
+        const favIcon = card.querySelector('.favorite-icon');
+        favIcon.onclick = e => {
+          e.stopPropagation();
+          toggleFav(ch.id, ch.name);
+          renderChannels(filterByCategory());
+        };
+        
+        card.onclick = () => openPlayer(ch.stream_url, ch.name);
+        channelsContainer.appendChild(card);
+      });
+    }
+    
+    // فلترة القنوات حسب التصنيف
+    function filterByCategory() {
+      if (currentCategory === 'all') return channels;
+      if (currentCategory === 'favorites') return channels.filter(c => favorites.includes(c.id));
+      return channels.filter(c => c.category === currentCategory);
+    }
+    
+    // فلترة القنوات حسب البحث
+    function filterByTerm(term) {
+      return filterByCategory().filter(c => 
+        c.name.toLowerCase().includes(term.toLowerCase()) || 
+        c.category.toLowerCase().includes(term.toLowerCase())
+      );
+    }
+    
+    // إضافة/حذف من المفضلة
+    function toggleFav(id, name) {
+      const idx = favorites.indexOf(id);
+      
+      if (idx > -1) {
+        favorites.splice(idx, 1);
+        showToast(`تم حذف قناة “${name}” من المفضلة`, 'warning');
+      } else {
+        favorites.push(id);
+        showToast(`تم إضافة قناة “${name}” إلى المفضلة`, 'success');
+      }
+      
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+    
+    // فتح مشغل الفيديو
+    function openPlayer(url, name) {
+      document.title = `هلا تي في - ${name}`;
+      videoPlayer.style.display = 'block';
+      history.pushState({ playerOpen: true }, '');
+      
+      if (hls) hls.destroy();
+      
+      if (Hls.isSupported()) {
+        hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(playerElem);
+        
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          player.play();
+          showToast(`جارٍ تشغيل: ${name}`, 'info');
+        });
+        
+        hls.on(Hls.Events.ERROR, (e, data) => {
+          if (data.fatal) {
+            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+              showToast('⚠️ مشكلة بالشبكة أثناء التشغيل', 'warning');
+            } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+              hls.recoverMediaError();
+            }
+          }
+        });
+      } else if (playerElem.canPlayType('application/vnd.apple.mpegurl')) {
+        playerElem.src = url;
+        player.play();
+        showToast(`جارٍ تشغيل: ${name}`, 'info');
+      } else {
+        showToast('⚠️ المتصفح لا يدعم تشغيل هذا النوع من الفيديو', 'error');
+      }
+    }
+    
+    // إغلاق مشغل الفيديو
+    function closeVideo() {
+      document.title = 'هلا تي في';
+      videoPlayer.style.display = 'none';
+      player.pause();
+      
+      if (hls) {
+        hls.destroy();
+        hls = null;
+      }
+      
+      if (history.state && history.state.playerOpen) {
+        history.back();
+      }
+    }
+  </script>
+</body>
+</html>
