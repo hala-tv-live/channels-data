@@ -226,8 +226,7 @@
     "category": "غير ذلك",
     "logo": "http://mobi.jawaltv.com/iphone/images/ar_jpg/omantv.jpg",
     "stream_url": "https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8"
-  }
-    ][
+  },
   {
     "name": "AghapyTV",
     "category": "دينية",
@@ -255,7 +254,7 @@
   {
     "name": "AlhayatTV",
     "category": "غير ذلك",
-    "logo": "https://logos.fandom.com/wiki/AlhayatTV?file=AlhayatTV.png",
+   "logo": "https://logos.fandom.com/wiki/AlhayatTV?file=AlhayatTV.png",
     "stream_url": "https://cdn3.wowza.com/5/OE5HREpIcEkySlNT/alhayat-live/ngrp:livestream_all/playlist.m3u8"
   },
   {
