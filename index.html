@@ -6,6 +6,7 @@
   <meta name="screen-orientation" content="portrait">
   <meta name="apple-mobile-web-app-orientation" content="portrait">
   <title>هلا تي في</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
@@ -14,8 +15,6 @@
     :root {
       --primary-color: #1e88e5;
       --accent-color: #e53935;
-      --heart-off: #ffeb3b;
-      --heart-on: #e53935;
       --light-color: #f5f5f5;
       --dark-color: #212121;
       --text-color: #333;
@@ -58,7 +57,7 @@
       justify-content:center;
       z-index:200;
       font-size:1.2rem;
-      color: var(--heart-on);
+      color: var(--red-btn);
     }
     
     .spinner {
@@ -306,10 +305,9 @@
       justify-content:space-between;
       align-items:center;
       border-bottom:1px solid rgba(255,255,255,0.1);
-      
-      background: url('https://raw.githubusercontent.com/hala-tv-live/channels-data/refs/heads/main/colorful-splash-paint-with-splash-color_1236215-11813.jpg') center/cover;
-            opacity: 3.1;
-            z-index: -1;
+      background: url('https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3') center/cover;
+      opacity: 3.1;
+      z-index: -1;
     }
     
     .logo-container {
@@ -330,7 +328,7 @@
     .logo-text {
       font-size: 1.5rem;
       font-weight: bold;
-      background: linear-gradient(45deg, #FFFFFF, #e0e0e0);
+      background: linear-gradient(45deg, #FFFFFF, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -369,7 +367,7 @@
       display:flex;
       align-items:center;
       padding:12px 20px;
-      color:var(--heart-off);
+      color:#ffeb3b;
       text-decoration:none;
       transition:all .3s;
       font-size: 1.1rem;
@@ -483,38 +481,6 @@
       border-radius: 20px;
     }
     
-    .favorite-icon {
-      position:absolute;
-      top:10px;
-      left:12px;
-      font-size:1.2rem;
-      cursor:pointer;
-      background: rgba(255,255,255,0.8);
-      width: 23px;
-      height: 23px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      transition: all 0.3s;
-      border: 0.4px solid black;
-      border-radius: 50% 50%;
-    }
-    
-    .favorite-icon:hover {
-      transform: scale(1.15);
-    }
-    
-    .favorite-icon.off {
-      color: var(--heart-off);
-    }
-    
-    .favorite-icon.on {
-      color: var(--heart-on);
-    }
-    
-    
     #videoPlayer {
       position:fixed;
       top:0;
@@ -567,7 +533,7 @@
     }
     
     .plyr__control:hover {
-      color:var(--light-color)!important;
+      color:var(---light-color)!important;
     }
     
     .no-results {
@@ -726,8 +692,7 @@
       height: 18px;
     }
     
-    
-       /* نموذج الاتصال */
+    /* نموذج الاتصال */
     .contact-form {
       width: 100%;
       max-width: 500px;
@@ -807,23 +772,19 @@
       margin-bottom: 15px;
     }
     
-    .channel-stats {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 15px;
+    /* رسالة حماية المحتوى */
+    .protection-message {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(229, 57, 53, 0.9);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
       font-size: 0.9rem;
-      color: #666;
-    }
-    
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    
-    .stat-item i {
-      color: var(--accent-color);
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeIn 0.5s;
     }
   </style>
 </head>
@@ -868,12 +829,10 @@
     </div>
   </div>
   
-
-  
   <div id="sidebar">
     <div class="sidebar-header">
       <div class="logo-container">
-        <img src="https://raw.githubusercontent.com/hala-tv-live/channels-data/refs/heads/main/logo.png" alt="Logo">
+      <img src="https://raw.githubusercontent.com/hala-tv-live/channels-data/refs/heads/main/logo.png" alt="Logo">
         <div class="logo-text">هلا تي في</div>
       </div>
       <button id="closeSidebar"><i class="fas fa-times"></i></button>
@@ -917,17 +876,6 @@
         <button id="clearSearch"><i class="fas fa-times"></i></button>
       </div>
     </header>
-    
-    <div class="channel-stats">
-      <div class="stat-item">
-        <i class="fas fa-tv"></i>
-        <span id="totalChannels">0</span> قناة
-      </div>
-      <div class="stat-item">
-        <i class="fas fa-star"></i>
-        <span id="favoriteCount">0</span> مفضلة
-      </div>
-    </div>
     
     <div class="channels-grid" id="channelsContainer">
       <!-- القنوات ستظهر هنا -->
@@ -990,8 +938,6 @@
     const closePlayerBtn = document.getElementById('closePlayer');
     const mainHeader = document.getElementById('mainHeader');
     const dontShowAgainCheckbox = document.getElementById('dontShowAgain');
-    const totalChannelsElem = document.getElementById('totalChannels');
-    const favoriteCountElem = document.getElementById('favoriteCount');
     
     // نافذة التوجيه
     const playerGuideModal = document.getElementById('playerGuideModal');
@@ -999,7 +945,6 @@
     
     // بيانات التطبيق
     let channels = [];
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let currentCategory = 'all';
     let hls;
     
@@ -1017,14 +962,10 @@
     window.addEventListener('DOMContentLoaded', () => {
       initListeners();
       loadChannels();
+      detectOrientation();
       setupScrollEffect();
-      updateFavoriteCount();
+      setupContentProtection(); // إعداد حماية المحتوى
     });
-    
-    // تحديث عدد القنوات المفضلة
-    function updateFavoriteCount() {
-      favoriteCountElem.textContent = favorites.length;
-    }
     
     // إعداد تأثير التمرير لتصغير الهيدر
     function setupScrollEffect() {
@@ -1035,6 +976,66 @@
           mainHeader.classList.remove('scrolled');
         }
       });
+    }
+    
+    // إعداد حماية المحتوى من النسخ
+    function setupContentProtection() {
+      // منع النقر بزر الماوس الأيمن
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        showToast('❌ النسخ غير مسموح به في هذا التطبيق', 'error', 2000);
+      });
+      
+      // منع اختيار النص
+      document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        showToast('❌ اختيار النص غير مسموح به', 'error', 1500);
+      });
+      
+      // منع السحب والإفلات
+      document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+      });
+      
+      // منع اختصار النسخ (Ctrl+C)
+      document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+          e.preventDefault();
+          showToast('❌ النسخ غير مسموح به في هذا التطبيق', 'error', 2000);
+        }
+        
+        // منع فتح أدوات المطورين (F12, Ctrl+Shift+I, Ctrl+Shift+C)
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'C' || e.key === 'c'))) {
+          e.preventDefault();
+          showToast('❌ هذا الإجراء غير مسموح به', 'error', 2000);
+        }
+      });
+      
+      // عرض رسالة حماية المحتوى بشكل دوري
+      setInterval(() => {
+        showContentProtectionMessage();
+      }, 300000); // كل 5 دقائق
+    }
+    
+    // عرض رسالة حماية المحتوى
+    function showContentProtectionMessage() {
+      const existingMessage = document.querySelector('.protection-message');
+      if (existingMessage) {
+        existingMessage.remove();
+      }
+      
+      const message = document.createElement('div');
+      message.className = 'protection-message';
+      message.innerHTML = 'جميع الحقوق محفوظة. النسخ غير مسموح به. <i class="fas fa-shield-alt"></i>';
+      
+      document.body.appendChild(message);
+      
+      // إزالة الرسالة بعد 5 ثواني
+      setTimeout(() => {
+        if (message.parentNode) {
+          message.parentNode.removeChild(message);
+        }
+      }, 5000);
     }
     
     // تهيئة المستمعين للأحداث
@@ -1065,7 +1066,7 @@
         if (a) {
           currentCategory = a.dataset.cat;
           updateCategories();
-          renderChannels(filterByTerm(searchInput.value));
+          renderChannels(filterByCategory());
         }
       };
       
@@ -1083,9 +1084,9 @@
       
       // أحداث روابط حول التطبيق
       document.querySelectorAll('.about-link').forEach(link => {
-        link.onclick = function(e) {
+        link.onclick = (e) => {
           e.preventDefault();
-          const type = this.dataset.type;
+          const type = link.dataset.type;
           
           // معلومات لكل نوع من الروابط
           const info = {
@@ -1299,21 +1300,14 @@
         // التحقق من نجاح الاستجابة
         if (!res.ok) throw new Error('فشل في جلب البيانات');
         
-        // التحقق من صحة JSON
-        const data = await res.text();
-        channels = JSON.parse(data);
+        channels = await res.json();
         channels.forEach((c, i) => c.id = i);
-        
-        // تحديث عدد القنوات
-        totalChannelsElem.textContent = channels.length;
         
         // تم تحميل القنوات بنجاح
         updateCategories();
         renderChannels(channels);
         showToast('✅ تم تحميل القنوات بنجاح', 'success');
       } catch (error) {
-        console.error('حدث خطأ أثناء تحميل القنوات:', error);
-        
         // عرض الرسالة فقط إذا لم يتم تحميل أي قنوات
         if (channels.length === 0) {
           showErrorModal('⚠️ تعذر تحميل القنوات! الرجاء إعادة المحاولة', true);
@@ -1328,7 +1322,7 @@
     
     // تحديث قائمة التصنيفات مع أيقونات مناسبة لكل فئة
     function updateCategories() {
-      const cats = ['all', ...new Set(channels.map(c => c.category)), 'favorites'];
+      const cats = ['all', ...new Set(channels.map(c => c.category))];
       categoriesNav.innerHTML = cats.map(cat => {
         let icon = 'fas fa-tv';
         let label = cat;
@@ -1336,9 +1330,6 @@
         if (cat === 'all') {
           icon = 'fas fa-home';
           label = 'الرئيسية';
-        } else if (cat === 'favorites') {
-          icon = 'fas fa-star';
-          label = 'المفضلة';
         } else {
           // تخصيص أيقونات للفئات الشائعة
           switch (cat.toLowerCase()) {
@@ -1409,36 +1400,20 @@
       }
       
       list.forEach(ch => {
-        if ((currentCategory === 'favorites' && !favorites.includes(ch.id)) || 
-            (currentCategory !== 'all' && currentCategory !== 'favorites' && ch.category !== currentCategory)) {
+        if (currentCategory !== 'all' && ch.category !== currentCategory) {
           return;
         }
         
-        const isFav = favorites.includes(ch.id);
         const card = document.createElement('div');
         card.className = 'channel-card';
         
-        // إنشاء رابط صورة احتياطي في حالة وجود مشكلة
-        const fallbackSVG = (name) => 
-          `data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect fill="#f5f5f5" width="200" height="200"/><text fill="#666" font-family="Arial" font-size="18" x="100" y="100" text-anchor="middle" dominant-baseline="middle">${encodeURIComponent(name)}</text></svg>`;
-        
-        const imgSrc = ch.logo && ch.logo.trim() !== '' ? ch.logo : fallbackSVG(ch.name);
-        
         card.innerHTML = `
-          <i class='fas fa-heart favorite-icon ${isFav ? 'on' : 'off'}' data-id='${ch.id}'></i>
-          <img class='channel-img' src='${imgSrc}' alt='${ch.name}'>
+          <img class='channel-img' src='${ch.logo}' alt='${ch.name}' onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20200%20200%22%3E%3Crect%20fill%3D%22%23f5f5f5%22%20width%3D%22200%22%20height%3D%22200%22%2F%3E%3Ctext%20fill%3D%22%23666%22%20font-family%3D%22Arial%22%20font-size%3D%2218%22%20x%3D%22100%22%20y%3D%22100%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E${ch.name}%3C%2Ftext%3E%3C%2Fsvg%3E'">
           <div class='channel-info'>
             <div class='channel-name'>${ch.name}</div>
             <div class='channel-category'>${ch.category}</div>
           </div>
         `;
-        
-        const favIcon = card.querySelector('.favorite-icon');
-        favIcon.onclick = e => {
-          e.stopPropagation();
-          toggleFav(ch.id, ch.name);
-          renderChannels(filterByCategory());
-        };
         
         card.onclick = () => openPlayer(ch.stream_url, ch.name);
         channelsContainer.appendChild(card);
@@ -1448,7 +1423,6 @@
     // فلترة القنوات حسب التصنيف
     function filterByCategory() {
       if (currentCategory === 'all') return channels;
-      if (currentCategory === 'favorites') return channels.filter(c => favorites.includes(c.id));
       return channels.filter(c => c.category === currentCategory);
     }
     
@@ -1458,22 +1432,6 @@
         c.name.toLowerCase().includes(term.toLowerCase()) || 
         c.category.toLowerCase().includes(term.toLowerCase())
       );
-    }
-    
-    // إضافة/حذف من المفضلة
-    function toggleFav(id, name) {
-      const idx = favorites.indexOf(id);
-      
-      if (idx > -1) {
-        favorites.splice(idx, 1);
-        showToast(`تم حذف قناة “${name}” من المفضلة`, 'warning');
-      } else {
-        favorites.push(id);
-        showToast(`تم إضافة قناة “${name}” إلى المفضلة`, 'success');
-      }
-      
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-      updateFavoriteCount();
     }
     
     // فتح مشغل الفيديو
@@ -1487,14 +1445,9 @@
         playerGuideModal.classList.remove('hidden');
       }
       
-      // تدمير أي مثيل سابق لـ HLS
-      if (hls) {
-        hls.destroy();
-        hls = null;
-      }
+      if (hls) hls.destroy();
       
-      // التحقق من دعم HLS قبل استخدامه
-      if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+      if (Hls.isSupported()) {
         hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(playerElem);
@@ -1528,18 +1481,24 @@
       videoPlayer.style.display = 'none';
       player.pause();
       
-      // تدمير مثيل HLS وتحرير الذاكرة
       if (hls) {
         hls.destroy();
         hls = null;
       }
       
-      // إعادة تعيين مصدر الفيديو
-      playerElem.src = '';
-      playerElem.load();
-      
       if (history.state && history.state.playerOpen) {
         history.back();
+      }
+    }
+    
+    // كشف اتجاه الشاشة
+    function detectOrientation() {
+      if (window.screen.orientation) {
+        window.screen.orientation.addEventListener('change', function() {
+          if (window.screen.orientation.type.includes('landscape')) {
+            showToast('💡 للعودة إلى الوضع العمودي، قم بتدوير جهازك', 'info', 2000);
+          }
+        });
       }
     }
   </script>
