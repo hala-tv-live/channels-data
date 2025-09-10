@@ -1,5 +1,113 @@
 [
   {
+    "name": "Al Araby TV (1080p)",
+    "logo": "https://i.imgur.com/YMqWEe4.png",
+    "stream_url": "https://alarabyta.cdn.octivid.com/alaraby/smil:alaraby.stream.smil/chunklist.m3u8",
+    "category": "أخبار"
+  },
+  {
+    "name": "4Kids TV",
+    "logo": "https://i.imgur.com/507piHp.png",
+    "stream_url": "http://149.100.19.147:8000/play/a02t",
+    "category": "أطفال"
+  },
+  {
+    "name": "Alkass Five (1080p)",
+    "logo": "https://i.imgur.com/6RGNGsM.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass5nnha/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Five (1080p)",
+    "logo": "https://i.imgur.com/6RGNGsM.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass5azq/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Four (1080p)",
+    "logo": "https://i.imgur.com/iDL65Wu.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass4cn/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Four (1080p)",
+    "logo": "https://i.imgur.com/iDL65Wu.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass4azq/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass One (1080p)",
+    "logo": "https://i.imgur.com/10mmlha.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass1mhu/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass One (1080p)",
+    "logo": "https://i.imgur.com/10mmlha.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass1muytrdc/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass SHOOF (1080p)",
+    "logo": "https://shoof.alkass.net/assets/images/shoof.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6Shoof1/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass SHOOF (1080p)",
+    "logo": "https://shoof.alkass.net/assets/images/shoof.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6Shoof1ab/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Six (1080p)",
+    "logo": "https://i.imgur.com/CrPSPSC.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6buzat/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Six (1080p)",
+    "logo": "https://i.imgur.com/CrPSPSC.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass6buzay/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Three (1080p)",
+    "logo": "https://i.imgur.com/d57BdFh.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass3vak/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Three (1080p)",
+    "logo": "https://i.imgur.com/d57BdFh.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass3vakazq/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Three (720p)",
+    "logo": "",
+    "stream_url": "https://streamer2.qna.org.qa/148161470_live/148161470_296.sdp/playlist.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Two (1080p)",
+    "logo": "https://i.imgur.com/8w61kFX.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass2hef/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Two (1080p)",
+    "logo": "https://i.imgur.com/8w61kFX.png",
+    "stream_url": "https://liveakgr.alkassdigital.net/hls/live/2097037/Alkass2hefazq/master.m3u8",
+    "category": "رياضة"
+  },
+  {
+    "name": "Alkass Two (720p)",
+    "logo": "",
+    "stream_url": "https://streamer1.qna.org.qa/148133202_live/148133202_63.sdp/playlist.m3u8",
+    "category": "رياضة"
+  },
+  {
     "name": "الأردنية",
     "logo": "https://static.jrtv.gov.jo/resize-width/380/content/x/Mp/1/Poster.png",
     "stream_url": "https://jrtv-live.ercdn.net/jordanhd/jordanhd.m3u8",
