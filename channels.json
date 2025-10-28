@@ -1,5 +1,101 @@
 [
   {
+    "name": "BEIN SPORTS (1)",
+    "logo": "",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/683620.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "BEIN SPORTS (2)",
+    "logo": "",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/683623.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "BEIN SPORTS (3)",
+    "logo": "",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/683626.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2022-02/b6ce2426cc52ca48e337dd2a263ccb21.jpg",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291592.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports 2 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-08/36c8a2f7e977b190633248afab44b0be.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291593.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports 3 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-08/d633a8820b5347f07f377b0961e49033.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291594.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports 4 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/968b2561d3ef02a84e6761d4d914db6a.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291595.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports 5 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/143beddb5ede0e1f1c962d27225f73e8.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291596.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports 6 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2022-08/508c7fe8551803cd75658da2876e94c9.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291597.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "US: BEIN Sports 7 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/35bdc00f1836b7669f614ffa005537c1.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291598.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "CA: BEIN Sports HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-09/7c07efb5599972e022017294d3666dbc.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/290701.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "TR: BEIN Sports 1 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/de22be100229320ab6edcdce8de7ba64.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317174.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "TR: BEIN Sports 2 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/9e0d289e6b96b75e073d74cae50fc8a4.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317175.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "TR: BEIN Sports 3 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/f7d20955aa9bafdb1a3f750f81e15bc9.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317176.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "TR: BEIN Sports 4 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/c3c50392388c5ec0a094ab2fdb13c874.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317177.ts",
+    "category": "رياضية"
+  },
+  {
+    "name": "TR: BEIN Sports 5 HD",
+    "logo": "http://s3.i3ns.net:2052/portal/picon/2023-11/6b3c1cbcf5f09bb55850d7f309ef5b44.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317178.ts",
+    "category": "رياضية"
+  },
+  {
     "name": "Al Araby TV (1080p)",
     "logo": "https://i.imgur.com/YMqWEe4.png",
     "stream_url": "https://alarabyta.cdn.octivid.com/alaraby/smil:alaraby.stream.smil/chunklist.m3u8",
