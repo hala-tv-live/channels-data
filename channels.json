@@ -1,99 +1,213 @@
 [
   {
-    "name": "BEIN SPORTS (1)",
-    "logo": "",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/683620.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 1 SD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/69698514771.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833371.ts",
+    "category": "رياضة"
   },
   {
-    "name": "BEIN SPORTS (2)",
-    "logo": "",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/683623.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports Premium 2 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/96772938541.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833413.ts",
+    "category": "رياضة"
   },
   {
-    "name": "BEIN SPORTS (3)",
-    "logo": "",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/683626.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 6 4K PURE HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/22767561871.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833432.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2022-02/b6ce2426cc52ca48e337dd2a263ccb21.jpg",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291592.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 5 4K PURE HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/10879109221.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833431.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports 2 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-08/36c8a2f7e977b190633248afab44b0be.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291593.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 4 4K PURE HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/91736550761.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833429.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports 3 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-08/d633a8820b5347f07f377b0961e49033.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291594.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 3 Premium 4K PURE HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/52115362531.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833428.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports 4 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/968b2561d3ef02a84e6761d4d914db6a.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291595.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 4 FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/22192559271.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833427.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports 5 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/143beddb5ede0e1f1c962d27225f73e8.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291596.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 3 Premium FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/19857905761.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833425.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports 6 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2022-08/508c7fe8551803cd75658da2876e94c9.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291597.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 7 FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/45793729681.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833434.ts",
+    "category": "رياضة"
   },
   {
-    "name": "US: BEIN Sports 7 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/35bdc00f1836b7669f614ffa005537c1.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/291598.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 3 English FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon_api/141612a5e10cc843074330323410b7a5.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833424.ts",
+    "category": "رياضة"
   },
   {
-    "name": "CA: BEIN Sports HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-09/7c07efb5599972e022017294d3666dbc.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/290701.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 3 FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/86737262241.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833423.ts",
+    "category": "رياضة"
   },
   {
-    "name": "TR: BEIN Sports 1 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/de22be100229320ab6edcdce8de7ba64.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317174.ts",
-    "category": "رياضية"
+    "name": "Bein Sports Premium 1 FHD/H265",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/49840119461.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833411.ts",
+    "category": "رياضة"
   },
   {
-    "name": "TR: BEIN Sports 2 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/9e0d289e6b96b75e073d74cae50fc8a4.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317175.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 2 FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/22435015491.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833419.ts",
+    "category": "رياضة"
   },
   {
-    "name": "TR: BEIN Sports 3 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/f7d20955aa9bafdb1a3f750f81e15bc9.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317176.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 1 English FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon_api/768537e153954a85413550f441fa18e5.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833418.ts",
+    "category": "رياضة"
   },
   {
-    "name": "TR: BEIN Sports 4 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2021-06/c3c50392388c5ec0a094ab2fdb13c874.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317177.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports 7 4K HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/19726475411.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833435.ts",
+    "category": "رياضة"
   },
   {
-    "name": "TR: BEIN Sports 5 HD",
-    "logo": "http://s3.i3ns.net:2052/portal/picon/2023-11/6b3c1cbcf5f09bb55850d7f309ef5b44.png",
-    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/317178.ts",
-    "category": "رياضية"
+    "name": "BEIN Sports XTRA 2 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/31853366731.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833415.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport MAX 3 FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon_api/f0551b9dcdb8ac253f6be74dee2cb83b.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833445.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports 10 FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/39806553211.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833436.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports NEWS HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/18876629091.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833442.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "Union BEIN Sports 1 Premium SD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/55676974411.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833409.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports 2 Premium HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/71468674371.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833440.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports 1 Premium FHD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/79542237451.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833439.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport 4 SD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/28714264671.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833381.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport 6 SD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/90045981471.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833387.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "VIP BEIN Sports 5 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/93929559641.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833386.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport 5 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/84891170391.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833384.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports 4 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/76324708471.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833383.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport 4 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/58443302111.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833382.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "VIP BEIN Sports 3 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/97601028691.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833380.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports Premium 3 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/99471025131.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833414.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport 3 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/79505812141.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833379.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sports 3 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/82458133391.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833378.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN SPORTS 3 HD (official asset)",
+    "logo": "https://assets.bein.com/mena/sites/4/2015/06/beIN_SPORTS3_DIGITAL_Mono.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833377.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "VIP BEIN Sports 2 HD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/63674873011.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833375.ts",
+    "category": "رياضة"
+  },
+  {
+    "name": "BEIN Sport 2 SD",
+    "logo": "http://img-cdn.curl.pk:8880/channels_icon/52684362631.png",
+    "stream_url": "http://ip96.uk:8080//live/H645668DH/7565848DHY/833374.ts",
+    "category": "رياضة"
   },
   {
     "name": "Al Araby TV (1080p)",
