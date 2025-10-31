@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <style>
+    /* جميع الأنماط السابقة تبقى كما هي */
     :root {
       --primary-color: #1e88e5;
       --accent-color: #e53935;
@@ -1434,7 +1435,7 @@
       );
     }
     
-    // فتح مشغل الفيديو
+    // فتح مشغل الفيديو - التعديل الرئيسي هنا
     function openPlayer(url, name) {
       document.title = `هلا تي في - ${name}`;
       videoPlayer.style.display = 'block';
@@ -1447,31 +1448,45 @@
       
       if (hls) hls.destroy();
       
-      if (Hls.isSupported()) {
-        hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(playerElem);
-        
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      // تحديد نوع الرابط ومعالجته بشكل مناسب
+      if (url.toLowerCase().includes('.m3u8')) {
+        // رابط HLS
+        if (Hls.isSupported()) {
+          hls = new Hls();
+          hls.loadSource(url);
+          hls.attachMedia(playerElem);
+          
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            player.play();
+            showToast(`جارٍ تشغيل: ${name}`, 'info');
+          });
+          
+          hls.on(Hls.Events.ERROR, (e, data) => {
+            if (data.fatal) {
+              if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                showToast('⚠️ مشكلة بالشبكة أثناء التشغيل', 'warning');
+              } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                hls.recoverMediaError();
+              }
+            }
+          });
+        } else if (playerElem.canPlayType('application/vnd.apple.mpegurl')) {
+          playerElem.src = url;
           player.play();
           showToast(`جارٍ تشغيل: ${name}`, 'info');
-        });
-        
-        hls.on(Hls.Events.ERROR, (e, data) => {
-          if (data.fatal) {
-            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
-              showToast('⚠️ مشكلة بالشبكة أثناء التشغيل', 'warning');
-            } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
-              hls.recoverMediaError();
-            }
-          }
-        });
-      } else if (playerElem.canPlayType('application/vnd.apple.mpegurl')) {
+        } else {
+          showToast('⚠️ المتصفح لا يدعم تشغيل هذا النوع من الفيديو', 'error');
+        }
+      } else if (url.toLowerCase().includes('.ts')) {
+        // رابط TS مباشر - نستخدمه مباشرة كمصدر للفيديو
         playerElem.src = url;
         player.play();
         showToast(`جارٍ تشغيل: ${name}`, 'info');
       } else {
-        showToast('⚠️ المتصفح لا يدعم تشغيل هذا النوع من الفيديو', 'error');
+        // رابط غير معروف - نحاول تشغيله مباشرة
+        playerElem.src = url;
+        player.play();
+        showToast(`جارٍ تشغيل: ${name}`, 'info');
       }
     }
     
@@ -1480,6 +1495,7 @@
       document.title = 'هلا تي في';
       videoPlayer.style.display = 'none';
       player.pause();
+      playerElem.src = '';
       
       if (hls) {
         hls.destroy();
