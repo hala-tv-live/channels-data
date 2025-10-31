@@ -1,0 +1,52 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-name="BeIN Sports 1 SD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/69698514771.png" group-title="BEIN SPORTS",BeIN Sports 1 SD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833371.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports Premium 2 HD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/96772938541.png" group-title="BEIN SPORTS",BeIN Sports Premium 2 HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833413.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports 6 4K" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/22767561871.png" group-title="BEIN SPORTS",BeIN Sports 6 4K
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833432.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports 5 4K" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/10879109221.png" group-title="BEIN SPORTS",BeIN Sports 5 4K
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833431.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports 4 4K" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/91736550761.png" group-title="BEIN SPORTS",BeIN Sports 4 4K
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833429.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports Premium 3 HD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/99471025131.png" group-title="BEIN SPORTS",BeIN Sports Premium 3 HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833414.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports 2 FHD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/22435015491.png" group-title="BEIN SPORTS",BeIN Sports 2 FHD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833419.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports 3 FHD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/86737262241.png" group-title="BEIN SPORTS",BeIN Sports 3 FHD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833423.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports 7 HD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/45793729681.png" group-title="BEIN SPORTS",BeIN Sports 7 HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833434.ts
+
+#EXTINF:-1 tvg-name="BeIN Sports News HD" tvg-logo="http://img-cdn.curl.pk:8880/channels_icon/18876629091.png" group-title="BEIN SPORTS",BeIN Sports News HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/833442.ts
+
+#EXTINF:-1 tvg-name="Oman TV Sport HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2021-05/d6cf71cce932a92dcca353c725575004.png" group-title="Oman",Oman TV Sport HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/296075.ts
+
+#EXTINF:-1 tvg-name="Jordan Sport HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2021-08/b9a2ae4f74f515a7b8a57b0b30f1d470.png" group-title="Jordan",Jordan Sport HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/296120.ts
+
+#EXTINF:-1 tvg-name="KTV Sport HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2022-05/17661dce11a86e01a2d34e96d9b39f68.png" group-title="Kuwait",KTV Sport HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/296170.ts
+
+#EXTINF:-1 tvg-name="Libya Sport TV HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2021-08/e063f8090c95b837f0c4f1160a5c028c.png" group-title="Libya",Libya Sport TV HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/296087.ts
+
+#EXTINF:-1 tvg-name="Nile Sport HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2021-05/453e365ccf57c1c54ceac3778a4d8092.png" group-title="Egypt",Nile Sport HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/302464.ts
+
+#EXTINF:-1 tvg-name="Al Rabiaa Sport HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2024-02/dce846ab8cd7e1aad0ebf321755ea40f.png" group-title="Iraq",Al Rabiaa Sport HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/302162.ts
+
+#EXTINF:-1 tvg-name="Iraqia Sport HD" tvg-logo="http://s3.i3ns.net:2052/portal/picon/2022-03/1b130e321ac7322a53e0c3fb66ea6485.jpg" group-title="Iraq",Iraqia Sport HD
+http://ip96.uk:8080/live/H645668DH/7565848DHY/302188.ts
