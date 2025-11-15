@@ -1,25 +1,22 @@
-const express = require('express');
-const request = require('request');
-const app = express();
-const PORT = process.env.PORT || 3000;
+<?php
+$input = isset($_GET['url']) ? $_GET['url'] : '';
+if(!$input){ echo "Error: Missing video URL"; exit; }
 
-app.get('/stream', (req, res) => {
-  const url = req.query.url;
-  if (!url) return res.status(400).send('URL required');
+$live_dir = __DIR__ . "/live/";
+if(!is_dir($live_dir)){ mkdir($live_dir, 0777, true); }
 
-  res.setHeader('Access-Control-Allow-Origin', '*');
+$playlist = $live_dir . "stream.m3u8";
 
-  if (url.endsWith('.ts')) {
-    res.setHeader('Content-Type', 'application/vnd.apple.mpegurl');
-    res.send(`#EXTM3U
-#EXT-X-VERSION:3
-#EXT-X-TARGETDURATION:10
-#EXTINF:10.0,
-${url}
-#EXT-X-ENDLIST`);
-  } else {
-    request({ url, encoding: null }).pipe(res);
-  }
-});
+// أمر FFmpeg لتحويل أي TS أو MP4 إلى HLS
+$cmd = "ffmpeg -y -i \"$input\" -c:v libx264 -c:a aac -f hls -hls_time 6 -hls_list_size 5 -hls_flags delete_segments \"$playlist\"";
 
-app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
+exec($cmd, $output, $return_var);
+if($return_var !== 0){
+    echo "FFmpeg error: " . implode("\n", $output);
+    exit;
+}
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: text/plain; charset=utf-8");
+echo "live/stream.m3u8";
+?>
