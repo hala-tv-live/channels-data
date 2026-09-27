@@ -1178,7 +1178,7 @@
   {
     "name": "صحراء 24",
     "logo": "https://saharamedias.net/wp-content/uploads/2024/04/Sahara24Live-1-1.gif",
-    "stream_url": "https://live.saharamedias.net/sahara24-live/tracks-v1a1/mono.m3u8",
+    "stream_url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
     "category": "أخبار"
   },
   {
